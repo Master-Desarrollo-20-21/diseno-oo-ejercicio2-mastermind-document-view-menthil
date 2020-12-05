@@ -1,5 +1,8 @@
 package es.escuelaIt.masterProgramacion.doo;
 
+import es.escuelaIt.masterProgramacion.doo.models.Game;
+import es.escuelaIt.masterProgramacion.doo.views.View;
+
 public class Mastermind 
 {
     private Game game;

@@ -1,5 +1,6 @@
-package es.escuelaIt.masterProgramacion.doo;
+package es.escuelaIt.masterProgramacion.doo.views;
 
+import es.escuelaIt.masterProgramacion.doo.models.Game;
 import es.escuelaIt.masterProgramacion.doo.utils.Console;
 
 public class StartView {
