@@ -13,4 +13,8 @@ public class Game {
         this.player[1] = new BreakerPlayer();
         this.board = new Board();
     }
+
+	public int getAttempts() {
+		return 0;
+	}
 }
