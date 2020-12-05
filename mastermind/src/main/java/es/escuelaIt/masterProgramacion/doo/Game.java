@@ -18,4 +18,11 @@ public class Game {
 	public int getAttempts() {
 		return 0;
 	}
+
+	public Error checkCombination(String combinationString) {
+		return Error.NULL;
+	}
+
+	public void addProposedCombination(String combinationString) {
+	}
 }
