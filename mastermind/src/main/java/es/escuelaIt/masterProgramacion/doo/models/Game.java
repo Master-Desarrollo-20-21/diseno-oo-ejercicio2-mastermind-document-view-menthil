@@ -2,21 +2,19 @@ package es.escuelaIt.masterProgramacion.doo.models;
 
 public class Game {
 
-    public static final int COMBINATION_SIZE = 4;
-	private Turn turn;
-    private Player player[];
-    private Board board;
+    public static final int MAX_ATTEMPTS = 10;
+	private SecretCombination secretCombination;
+    private ProposedCombination[] proposedCombinations;
+    private int attempts;
 
     public Game() {
-        this.turn = new Turn();
-        this.player = new Player[2];
-        this.player[0] = new MakerPlayer();
-        this.player[1] = new BreakerPlayer();
-        this.board = new Board();
+        this.secretCombination = new SecretCombination();
+        this.proposedCombinations = new ProposedCombination[Game.MAX_ATTEMPTS];
+        this.attempts = 0;
     }
 
 	public int getAttempts() {
-		return 0;
+		return this.attempts;
 	}
 
 	public Error checkCombination(String combinationString) {
@@ -24,5 +22,11 @@ public class Game {
 	}
 
 	public void addProposedCombination(String combinationString) {
+        this.proposedCombinations[this.attempts] = new ProposedCombination(combinationString);
+        this.attempts++;
+	}
+
+	public int getCombinationSize() {
+		return this.secretCombination.getLength();
 	}
 }

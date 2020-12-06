@@ -24,5 +24,4 @@ public class ProposeView {
 		} while (!error.isNull());
 		this.game.addProposedCombination(combinationString);
 	}
-
 }

@@ -5,16 +5,16 @@ import es.escuelaIt.masterProgramacion.doo.utils.Console;
 
 public class StartView {
 
-    private GameView gameView;
+    private Game game;
 
     public StartView(Game game) {
-        this.gameView = new GameView(game);
+        this.game = game;
     }
 
     public void interact() {
         Console console = Console.getInstance();
         console.writeln("-----------------MASTERMIND-----------------");
-        this.gameView.write();
+        new GameView(this.game).write();
     }
 
 }

@@ -1,5 +1,5 @@
 package es.escuelaIt.masterProgramacion.doo.models;
 
-public class Player {
+public class SecretCombination extends Combination {
 
 }
