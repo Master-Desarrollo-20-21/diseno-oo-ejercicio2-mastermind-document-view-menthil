@@ -20,7 +20,7 @@ public class ProposedCombinationView {
         String characters;
         do {
             error = Error.NULL;
-            console.write("Propose a combination: ");
+            console.write(Message.PROPOSE.getMessage());
             characters = console.readString();
             if (characters.length() != Combination.COMBINATION_SIZE) {
                 error = Error.WRONG_LENGTH;

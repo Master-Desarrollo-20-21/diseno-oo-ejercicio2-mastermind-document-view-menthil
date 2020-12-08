@@ -14,7 +14,7 @@ public class SecretCombinationView {
     public void write() {
         Console console = Console.getInstance();
         for (int i = 0; i < this.game.getCombinationSize(); i++) {
-            console.write("x");
+            console.write(Message.SECRET.getMessage());
         }
         console.writeln();
     }

@@ -14,19 +14,17 @@ public class GameView {
     public void write() {
         Console console = Console.getInstance();
         int attempts = this.game.getAttempts();
-        console.writeln(attempts + " attempt(s):");
+        console.writeln(Message.ATTEMPTS.getMessage().replace("#attempts", "" + attempts));
         new SecretCombinationView(this.game).write();
         for (int i = 0; i < attempts; i++) {
             new ProposedCombinationView(this.game.getProposedCombination(i)).write();
-            console.write(" --> ");
             new ResultView(this.game.getResult(i)).write();
-            console.writeln();
         }
         if (this.game.isFinished()) {
             if (this.game.isWinner()) {
-                console.writeln("You've won!! ;-)");
+                console.writeln(Message.WINNER.getMessage());
             } else {
-                console.writeln("You've lost!! :-(");
+                console.writeln(Message.LOOSER.getMessage());
             }
         }
     }

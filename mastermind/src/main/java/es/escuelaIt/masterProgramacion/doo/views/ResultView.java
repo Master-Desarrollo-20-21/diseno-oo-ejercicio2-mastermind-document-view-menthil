@@ -12,7 +12,9 @@ public class ResultView {
     }
 
     public void write() {
-        Console.getInstance().write(this.result.getBlacks() + " blacks and " + this.result.getWhites() + " whites");
+        Console.getInstance().writeln(Message.RESULT.getMessage()
+            .replace("#blacks", "" + this.result.getBlacks())
+            .replace("#whites", "" + this.result.getWhites()));
     }
 
 }

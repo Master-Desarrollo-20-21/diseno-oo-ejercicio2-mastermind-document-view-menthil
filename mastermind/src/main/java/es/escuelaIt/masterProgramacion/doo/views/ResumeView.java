@@ -14,6 +14,6 @@ public class ResumeView {
     public boolean isResumed() {
         new GameView(this.game).write();
         this.game.reset();
-        return new YesNoDialog().read("RESUME");
+        return new YesNoDialog().read(Message.RESUME.getMessage());
     }
 }

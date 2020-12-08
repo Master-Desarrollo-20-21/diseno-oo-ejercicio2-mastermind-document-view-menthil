@@ -6,7 +6,7 @@ public class StartView {
 
     public void interact() {
         Console console = Console.getInstance();
-        console.writeln("-----------------MASTERMIND-----------------");
+        console.writeln(Message.TITLE.getMessage());
     }
 
 }
