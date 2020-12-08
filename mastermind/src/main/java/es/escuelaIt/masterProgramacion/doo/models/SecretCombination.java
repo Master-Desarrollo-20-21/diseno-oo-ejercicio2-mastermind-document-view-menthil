@@ -5,8 +5,8 @@ import java.util.Random;
 
 public class SecretCombination extends Combination {
 
-	public SecretCombination() {
-		for (Color color : Color.values()) {
+    public SecretCombination() {
+        for (Color color : Color.values()) {
             if (!color.isNull()) this.colors.add(color);
         }
         Random random = new Random(System.currentTimeMillis());
@@ -14,9 +14,9 @@ public class SecretCombination extends Combination {
             this.colors.remove(random.nextInt(this.colors.size()));
         }
         Collections.shuffle(this.colors);
-	}
+    }
 
-	public Result getResult(ProposedCombination proposedCombination) {
+    public Result getResult(ProposedCombination proposedCombination) {
         int blacks = 0;
         int whites = 0;
         for (int i = 0; i < this.colors.size(); i++) {
@@ -29,7 +29,7 @@ public class SecretCombination extends Combination {
                 }
             }
         }
-		return new Result(blacks, whites);
-	}
+        return new Result(blacks, whites);
+    }
 
 }

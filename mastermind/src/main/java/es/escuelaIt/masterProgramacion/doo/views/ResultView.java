@@ -7,12 +7,12 @@ public class ResultView {
 
     private Result result;
 
-	public ResultView(Result result) {
+    public ResultView(Result result) {
         this.result = result;
-	}
+    }
 
-	public void write() {
+    public void write() {
         Console.getInstance().write(this.result.getBlacks() + " blacks and " + this.result.getWhites() + " whites");
-	}
+    }
 
 }

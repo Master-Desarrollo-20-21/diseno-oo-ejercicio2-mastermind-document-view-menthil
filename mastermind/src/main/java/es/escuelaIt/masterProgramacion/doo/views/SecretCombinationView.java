@@ -7,16 +7,16 @@ public class SecretCombinationView {
 
     private Game game;
 
-	public SecretCombinationView(Game game) {
+    public SecretCombinationView(Game game) {
         this.game = game;
-	}
+    }
 
-	public void write() {
+    public void write() {
         Console console = Console.getInstance();
         for (int i = 0; i < this.game.getCombinationSize(); i++) {
             console.write("x");
         }
         console.writeln();
-	}
+    }
 
 }
