@@ -17,7 +17,19 @@ public class SecretCombination extends Combination {
 	}
 
 	public Result getResult(ProposedCombination proposedCombination) {
-		return new Result();
+        int blacks = 0;
+        int whites = 0;
+        for (int i = 0; i < this.colors.size(); i++) {
+            Color color = this.colors.get(i);
+            if (proposedCombination.contains(color, i)) {
+                blacks++;
+            } else {
+                if (proposedCombination.contains(color)) {
+                    whites++;
+                }
+            }
+        }
+		return new Result(blacks, whites);
 	}
 
 }

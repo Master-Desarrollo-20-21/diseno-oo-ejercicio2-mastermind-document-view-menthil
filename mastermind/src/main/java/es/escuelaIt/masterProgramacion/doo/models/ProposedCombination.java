@@ -18,6 +18,11 @@ public class ProposedCombination extends Combination {
 		return false;
 	}
 
+	public boolean contains(Color color, int position) {
+		assert position < this.colors.size();
+		return color == this.colors.get(position);
+	}
+
 	public void add(Color color) {
 		assert this.colors.size() < Combination.COMBINATION_SIZE;
 		assert !color.isNull();
