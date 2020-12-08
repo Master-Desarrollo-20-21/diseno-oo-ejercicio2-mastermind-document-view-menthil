@@ -5,15 +5,15 @@ import es.escuelaIt.masterProgramacion.doo.utils.YesNoDialog;
 
 public class ResumeView {
 
-	private Game game;
+    private Game game;
 
-	public ResumeView(Game game) {
-		this.game = game;
-	}
+    public ResumeView(Game game) {
+        this.game = game;
+    }
 
-	public boolean isResumed() {
-		new GameView(this.game);
-		this.game.reset();
-		return new YesNoDialog().read("RESUME");
-	}
+    public boolean isResumed() {
+        new GameView(this.game);
+        this.game.reset();
+        return new YesNoDialog().read("RESUME");
+    }
 }

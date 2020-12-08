@@ -16,11 +16,18 @@ public class GameView {
         int attempts = this.game.getAttempts();
         console.writeln(attempts + " attempt(s):");
         new SecretCombinationView(this.game).write();
-        for (int i = 0; i < this.game.getAttempts(); i++) {
+        for (int i = 0; i < attempts; i++) {
             new ProposedCombinationView(this.game.getProposedCombination(i)).write();
             console.write(" --> ");
             new ResultView(this.game.getResult(i)).write();
             console.writeln();
+        }
+        if (this.game.isFinished()) {
+            if (this.game.isWinner()) {
+                console.writeln("You've won!! ;-)");
+            } else {
+                console.writeln("You've lost!! :-(");
+            }
         }
     }
 
