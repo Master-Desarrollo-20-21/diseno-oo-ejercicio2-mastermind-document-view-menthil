@@ -4,6 +4,10 @@ import java.util.List;
 
 public class Combination {
     
-    public static final int COMBINATION_SIZE = 4;
+    private static final int COMBINATION_SIZE = 4;
     protected List<Color> colors;
+
+    public static int getSize() {
+        return Combination.COMBINATION_SIZE;
+    }
 }

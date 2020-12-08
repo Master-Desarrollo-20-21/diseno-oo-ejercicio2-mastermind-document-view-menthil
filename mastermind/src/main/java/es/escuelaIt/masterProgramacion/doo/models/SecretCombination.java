@@ -12,7 +12,7 @@ public class SecretCombination extends Combination {
             if (!color.isNull()) this.colors.add(color);
         }
         Random random = new Random(System.currentTimeMillis());
-        for (int i = 0; i < (Color.length() - 1) - Combination.COMBINATION_SIZE; i++) {
+        for (int i = 0; i < (Color.length() - 1) - SecretCombination.getSize(); i++) {
             this.colors.remove(random.nextInt(this.colors.size()));
         }
         Collections.shuffle(this.colors);

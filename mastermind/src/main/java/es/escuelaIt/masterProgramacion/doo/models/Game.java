@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Game {
 
-    public static final int MAX_ATTEMPTS = 10;
+    private static final int MAX_ATTEMPTS = 10;
     private SecretCombination secretCombination;
     private List<ProposedCombination> proposedCombinations;
     private List<Result> results;
@@ -28,10 +28,6 @@ public class Game {
         assert this.getAttempts() < Game.MAX_ATTEMPTS;
         this.proposedCombinations.add(proposedCombination);
         this.results.add(this.secretCombination.getResult(proposedCombination));
-    }
-
-    public int getCombinationSize() {
-        return Combination.COMBINATION_SIZE;
     }
 
     public boolean isFinished() {

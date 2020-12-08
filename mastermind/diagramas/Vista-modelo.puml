@@ -11,7 +11,6 @@ Package models <<Folder>> {
     Game *--> SecretCombination
     Game o--> "0..10" ProposedCombination
     Game o--> "0..10" Result
-    Game ..> Combination
 
     Class Combination
     Combination <|-- SecretCombination
@@ -25,7 +24,7 @@ Package models <<Folder>> {
     Class ProposedCombination
 
     Class Result
-    Result ..> Combination
+    Result ..> ProposedCombination
 
     Enum Error
 
@@ -62,7 +61,7 @@ Package views <<Folder>> {
     GameView ..> ResultView
 
     Class SecretCombinationView
-    SecretCombinationView --> models.Game
+    SecretCombinationView ..> models.SecretCombination
     SecretCombinationView ..> utils.Console
     SecretCombinationView ..> Message
 
@@ -78,7 +77,6 @@ Package views <<Folder>> {
     ProposedCombinationView ..> Message
     ProposedCombinationView ..> models.Color
     ProposedCombinationView ..> ColorView
-    ProposedCombinationView ..> models.Combination
     ProposedCombinationView ..> ErrorView
 
     Class ErrorView

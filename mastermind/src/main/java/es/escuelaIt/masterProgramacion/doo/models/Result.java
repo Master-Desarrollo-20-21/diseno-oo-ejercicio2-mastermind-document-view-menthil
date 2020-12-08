@@ -19,7 +19,7 @@ public class Result {
     }
 
     public boolean isWinner() {
-        return this.getBlacks() == Combination.COMBINATION_SIZE;
+        return this.getBlacks() == ProposedCombination.getSize();
     }
 
 }

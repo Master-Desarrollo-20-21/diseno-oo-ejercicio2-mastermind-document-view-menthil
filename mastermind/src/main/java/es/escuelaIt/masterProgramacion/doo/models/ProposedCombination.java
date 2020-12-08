@@ -29,7 +29,7 @@ public class ProposedCombination extends Combination {
     }
 
     public void add(Color color) {
-        assert this.colors.size() < Combination.COMBINATION_SIZE;
+        assert this.colors.size() < ProposedCombination.getSize();
         assert !color.isNull();
         this.colors.add(color);
     }

@@ -2,7 +2,6 @@ package es.escuelaIt.masterProgramacion.doo.views;
 
 import es.escuelaIt.masterProgramacion.doo.models.ProposedCombination;
 import es.escuelaIt.masterProgramacion.doo.models.Color;
-import es.escuelaIt.masterProgramacion.doo.models.Combination;
 import es.escuelaIt.masterProgramacion.doo.models.Error;
 import es.escuelaIt.masterProgramacion.doo.utils.Console;
 
@@ -22,7 +21,7 @@ public class ProposedCombinationView {
             error = Error.NULL;
             console.write(Message.PROPOSE.getMessage());
             characters = console.readString();
-            if (characters.length() != Combination.COMBINATION_SIZE) {
+            if (characters.length() != ProposedCombination.getSize()) {
                 error = Error.WRONG_LENGTH;
             } else {
                 for (int i = 0; i < characters.length(); i++) {

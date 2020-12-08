@@ -15,7 +15,7 @@ public class GameView {
         Console console = Console.getInstance();
         int attempts = this.game.getAttempts();
         console.writeln(Message.ATTEMPTS.getMessage().replace("#attempts", "" + attempts));
-        new SecretCombinationView(this.game).write();
+        new SecretCombinationView().write();
         for (int i = 0; i < attempts; i++) {
             new ProposedCombinationView(this.game.getProposedCombination(i)).write();
             new ResultView(this.game.getResult(i)).write();
