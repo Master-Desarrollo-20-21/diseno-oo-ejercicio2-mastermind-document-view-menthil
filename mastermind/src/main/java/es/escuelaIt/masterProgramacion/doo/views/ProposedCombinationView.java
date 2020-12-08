@@ -40,7 +40,7 @@ public class ProposedCombinationView {
             }
             if (!error.isNull()) {
                 new ErrorView(error).write();
-                this.proposedCombination.clear();
+                this.proposedCombination.reset();
             }
         } while (!error.isNull());
     }

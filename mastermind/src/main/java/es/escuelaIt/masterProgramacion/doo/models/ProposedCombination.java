@@ -6,10 +6,10 @@ import java.util.List;
 public class ProposedCombination extends Combination {
 
     public ProposedCombination() {
-        this.clear();
+        this.reset();
     }
     
-    public void clear() {
+    public void reset() {
         this.colors = new ArrayList<>();
     }
 
