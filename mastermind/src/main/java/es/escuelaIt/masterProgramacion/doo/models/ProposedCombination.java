@@ -22,4 +22,8 @@ public class ProposedCombination extends Combination {
 		this.colors[this.elements] = color;
 		this.elements++;
 	}
+
+	public Color[] getColors() {
+		return this.colors;
+	}
 }

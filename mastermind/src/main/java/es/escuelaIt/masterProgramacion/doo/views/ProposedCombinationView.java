@@ -44,4 +44,10 @@ public class ProposedCombinationView {
             }
 		} while (!error.isNull());
 	}
+
+	public void write() {
+        for (Color color : this.proposedCombination.getColors()) {
+            new ColorView(color).write();
+        }
+	}
 }

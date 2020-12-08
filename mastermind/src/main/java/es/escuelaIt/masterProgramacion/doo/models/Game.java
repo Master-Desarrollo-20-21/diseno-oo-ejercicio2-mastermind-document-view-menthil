@@ -37,4 +37,9 @@ public class Game {
 	public boolean isFinished() {
 		return this.getAttempts() == Game.MAX_ATTEMPTS;
 	}
+
+	public ProposedCombination getProposedCombination(int i) {
+		assert i < this.getAttempts();
+		return this.proposedCombinations.get(i);
+	}
 }
