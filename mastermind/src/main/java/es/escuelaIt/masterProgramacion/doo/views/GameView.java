@@ -19,6 +19,7 @@ public class GameView {
         for (int i = 0; i < this.game.getAttempts(); i++) {
             new ProposedCombinationView(this.game.getProposedCombination(i)).write();
             console.write(" --> ");
+            new ResultView(this.game.getResult(i)).write();
             console.writeln();
         }
     }

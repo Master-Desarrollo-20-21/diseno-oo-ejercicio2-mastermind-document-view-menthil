@@ -42,4 +42,9 @@ public class Game {
 		assert i < this.getAttempts();
 		return this.proposedCombinations.get(i);
 	}
+
+	public Result getResult(int i) {
+		assert i < this.getAttempts();
+		return this.results.get(i);
+	}
 }
