@@ -1,0 +1,111 @@
+@startuml Vista-modelo
+
+Class Mastermind
+
+Mastermind *--> models.Game
+Mastermind *--> views.View
+
+Package models <<Folder>> {
+
+    Class Game
+    Game *--> SecretCombination
+    Game o--> "0..10" ProposedCombination
+    Game o--> "0..10" Result
+    Game ..> Combination
+
+    Class Combination
+    Combination <|-- SecretCombination
+    Combination <|-- ProposedCombination
+    Combination o--> "0..4" Color
+
+    Class SecretCombination
+    SecretCombination ..> ProposedCombination
+    SecretCombination ..> Result
+
+    Class ProposedCombination
+
+    Class Result
+    Result ..> Combination
+
+    Enum Error
+
+    Enum Color
+
+}
+
+Package views <<Folder>> {
+
+    Class View
+    View --> models.Game
+    View *--> StartView
+    View *--> ProposalView
+    View *--> ResumeView
+
+    Class StartView
+    StartView ..> Message
+    StartView ..> utils.Console
+
+    Class ProposalView
+    ProposalView --> models.Game
+    ProposalView ..> GameView
+    ProposalView ..> models.ProposedCombination
+    ProposalView ..> ProposedCombinationView
+
+    Class GameView
+    GameView --> models.Game
+    GameView ..> utils.Console
+    GameView ..> Message
+    GameView ..> SecretCombinationView
+    GameView ..> models.ProposedCombination
+    GameView ..> ProposedCombinationView
+    GameView ..> models.Result
+    GameView ..> ResultView
+
+    Class SecretCombinationView
+    SecretCombinationView --> models.Game
+    SecretCombinationView ..> utils.Console
+    SecretCombinationView ..> Message
+
+    Class ResultView
+    ResultView --> models.Result
+    ResultView ..> utils.Console
+    ResultView ..> Message
+
+    Class ProposedCombinationView
+    ProposedCombinationView --> models.ProposedCombination
+    ProposedCombinationView ..> utils.Console
+    ProposedCombinationView ..> models.Error
+    ProposedCombinationView ..> Message
+    ProposedCombinationView ..> models.Color
+    ProposedCombinationView ..> ColorView
+    ProposedCombinationView ..> models.Combination
+    ProposedCombinationView ..> ErrorView
+
+    Class ErrorView
+    ErrorView --> models.Error
+    ErrorView ..> utils.Console
+    ErrorView ..> Message
+
+    Class ColorView
+    ColorView --> models.Color
+    ColorView ..> utils.Console
+
+    Class ResumeView
+    ResumeView --> models.Game
+    ResumeView ..> GameView
+    ResumeView ..> utils.YesNoDialog
+    ResumeView ..> Message
+
+    Enum Message
+
+}
+
+Package utils <<Folder>> {
+    Class YesNoDialog
+    YesNoDialog ..> Console
+
+    Class Console
+
+}
+
+@enduml
