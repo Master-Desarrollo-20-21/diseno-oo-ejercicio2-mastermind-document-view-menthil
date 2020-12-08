@@ -12,6 +12,7 @@ public class ProposalView {
 	}
 
 	public void interact() {
+        new GameView(this.game).write();
 		ProposedCombination proposedCombination = new ProposedCombination();
 		ProposedCombinationView proposedCombinationView = new ProposedCombinationView(proposedCombination);
 		proposedCombinationView.read();

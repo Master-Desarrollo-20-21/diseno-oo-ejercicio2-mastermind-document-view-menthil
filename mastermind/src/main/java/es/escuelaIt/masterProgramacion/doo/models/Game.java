@@ -1,28 +1,36 @@
 package es.escuelaIt.masterProgramacion.doo.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Game {
 
     public static final int MAX_ATTEMPTS = 10;
 	private SecretCombination secretCombination;
-    private ProposedCombination[] proposedCombinations;
-    private int attempts;
+    private List<ProposedCombination> proposedCombinations;
+    private List<Result> results;
 
     public Game() {
         this.secretCombination = new SecretCombination();
-        this.proposedCombinations = new ProposedCombination[Game.MAX_ATTEMPTS];
-        this.attempts = 0;
+        this.proposedCombinations = new ArrayList<>();
+        this.results = new ArrayList<>();
     }
 
 	public int getAttempts() {
-		return this.attempts;
+		return this.proposedCombinations.size();
 	}
 
 	public void addProposedCombination(ProposedCombination proposedCombination) {
-        this.proposedCombinations[this.attempts] = proposedCombination;
-        this.attempts++;
+        assert this.getAttempts() < Game.MAX_ATTEMPTS;
+        this.proposedCombinations.add(proposedCombination);
+        this.results.add(this.secretCombination.getResult(proposedCombination));
 	}
 
 	public int getCombinationSize() {
 		return Combination.COMBINATION_SIZE;
+	}
+
+	public boolean isFinished() {
+		return this.getAttempts() == Game.MAX_ATTEMPTS;
 	}
 }
