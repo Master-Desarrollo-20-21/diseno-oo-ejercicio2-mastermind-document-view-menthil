@@ -1,5 +1,7 @@
 package es.escuelaIt.masterProgramacion.doo.models;
 
+import java.util.List;
+
 public class ProposedCombination extends Combination {
 
 	public void clear() {
@@ -8,8 +10,8 @@ public class ProposedCombination extends Combination {
 
 	public boolean contains(Color color) {
 		assert !color.isNull();
-		for (int i = 0; i < this.elements; i++) {
-			if (this.colors[i] == color) {
+		for (int i = 0; i < this.colors.size(); i++) {
+			if (this.colors.get(i) == color) {
 				return true;
 			}
 		}
@@ -17,13 +19,12 @@ public class ProposedCombination extends Combination {
 	}
 
 	public void add(Color color) {
-		assert this.elements < Combination.COMBINATION_SIZE;
+		assert this.colors.size() < Combination.COMBINATION_SIZE;
 		assert !color.isNull();
-		this.colors[this.elements] = color;
-		this.elements++;
+		this.colors.add(color);
 	}
 
-	public Color[] getColors() {
+	public List<Color> getColors() {
 		return this.colors;
 	}
 }

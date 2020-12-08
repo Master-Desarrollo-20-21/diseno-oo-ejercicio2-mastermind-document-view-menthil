@@ -7,4 +7,8 @@ public enum Color {
 	public boolean isNull() {
 		return this == Color.NULL;
 	}
+
+	public static int length() {
+		return Color.values().length;
+	}
 }

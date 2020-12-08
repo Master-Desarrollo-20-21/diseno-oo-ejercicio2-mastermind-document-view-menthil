@@ -12,7 +12,7 @@ public class ResumeView {
     }
 
     public boolean isResumed() {
-        new GameView(this.game);
+        new GameView(this.game).write();
         this.game.reset();
         return new YesNoDialog().read("RESUME");
     }

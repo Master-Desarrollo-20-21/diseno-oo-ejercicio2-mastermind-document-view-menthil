@@ -1,17 +1,18 @@
 package es.escuelaIt.masterProgramacion.doo.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Combination {
     
     public static final int COMBINATION_SIZE = 4;
-	protected Color colors[];
-	protected int elements;
+	protected List<Color> colors;
 
 	protected Combination() {
 		this.clear();
 	}
 	
 	protected void clear() {
-		this.colors = new Color[Combination.COMBINATION_SIZE];
-		this.elements = 0;
+		this.colors = new ArrayList<>();
 	}
 }
