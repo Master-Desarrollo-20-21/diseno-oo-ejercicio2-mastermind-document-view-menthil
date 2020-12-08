@@ -1,11 +1,16 @@
 package es.escuelaIt.masterProgramacion.doo.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProposedCombination extends Combination {
 
+    public ProposedCombination() {
+        this.clear();
+    }
+    
     public void clear() {
-        super.clear();
+        this.colors = new ArrayList<>();
     }
 
     public boolean contains(Color color) {

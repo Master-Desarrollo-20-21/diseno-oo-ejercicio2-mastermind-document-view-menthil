@@ -1,11 +1,13 @@
 package es.escuelaIt.masterProgramacion.doo.models;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
 public class SecretCombination extends Combination {
 
     public SecretCombination() {
+        this.colors = new ArrayList<>();
         for (Color color : Color.values()) {
             if (!color.isNull()) this.colors.add(color);
         }
