@@ -11,10 +11,14 @@ public class Game {
     private List<Result> results;
 
     public Game() {
+		this.reset();
+    }
+
+	public void reset() {
         this.secretCombination = new SecretCombination();
         this.proposedCombinations = new ArrayList<>();
         this.results = new ArrayList<>();
-    }
+	}
 
 	public int getAttempts() {
 		return this.proposedCombinations.size();

@@ -17,10 +17,12 @@ public class View {
 	}
 
 	public void interact() {
-        this.startView.interact();
         do {
-            this.proposalView.interact();
-        } while (!this.resumeView.isFinished());
+            this.startView.interact();
+            do {
+                this.proposalView.interact();
+            } while (!this.proposalView.isFinished());
+        } while (this.resumeView.isResumed());
 	}
 
 }

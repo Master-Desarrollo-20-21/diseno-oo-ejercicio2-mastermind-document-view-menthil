@@ -18,4 +18,8 @@ public class ProposalView {
 		proposedCombinationView.read();
 		this.game.addProposedCombination(proposedCombination);
 	}
+
+	public boolean isFinished() {
+		return this.game.isFinished();
+	}
 }
