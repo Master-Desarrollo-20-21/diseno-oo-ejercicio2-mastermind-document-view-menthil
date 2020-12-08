@@ -18,4 +18,8 @@ public class Result {
 		return this.whites;
 	}
 
+	public boolean isWinner() {
+		return this.getBlacks() == Combination.COMBINATION_SIZE;
+	}
+
 }

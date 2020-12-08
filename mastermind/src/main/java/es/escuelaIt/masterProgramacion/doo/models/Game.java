@@ -42,7 +42,7 @@ public class Game {
         if (this.getAttempts() == 0) {
             return false;
         }
-        return this.results.get(this.getAttempts()-1).getBlacks() == Combination.COMBINATION_SIZE;
+        return this.results.get(this.getAttempts()-1).isWinner();
     }
 
     public ProposedCombination getProposedCombination(int i) {
