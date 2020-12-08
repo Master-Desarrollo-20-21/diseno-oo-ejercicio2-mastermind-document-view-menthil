@@ -17,16 +17,12 @@ public class Game {
 		return this.attempts;
 	}
 
-	public Error checkCombination(String combinationString) {
-		return Error.NULL;
-	}
-
-	public void addProposedCombination(String combinationString) {
-        this.proposedCombinations[this.attempts] = new ProposedCombination(combinationString);
+	public void addProposedCombination(ProposedCombination proposedCombination) {
+        this.proposedCombinations[this.attempts] = proposedCombination;
         this.attempts++;
 	}
 
 	public int getCombinationSize() {
-		return this.secretCombination.getLength();
+		return Combination.COMBINATION_SIZE;
 	}
 }

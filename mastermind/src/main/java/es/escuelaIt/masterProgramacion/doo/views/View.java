@@ -6,13 +6,13 @@ public class View {
 
     private Game game;
     private StartView startView;
-    private ProposeView proposeView;
+    private ProposalView proposeView;
     private ResumeView resumeView;
 
 	public View(Game game) {
         this.game = game;
         this.startView = new StartView(this.game);
-        this.proposeView = new ProposeView(this.game);
+        this.proposeView = new ProposalView(this.game);
         this.resumeView = new ResumeView(this.game);
 	}
 
